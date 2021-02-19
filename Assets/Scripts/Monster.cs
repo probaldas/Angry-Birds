@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (ShouldDieFromCollision(collision))
         {
@@ -11,7 +10,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    bool ShouldDieFromCollision(Collision2D collision)
+    private bool ShouldDieFromCollision(Collision2D collision)
     {
         Bird bird = collision.gameObject.GetComponent<Bird>();
         if (bird != null)
@@ -23,7 +22,7 @@ public class Monster : MonoBehaviour
         return false;
     }
 
-    void Die()
+    private void Die()
     {
         gameObject.SetActive(false);
     }

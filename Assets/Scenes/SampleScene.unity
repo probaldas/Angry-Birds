@@ -1030,6 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _launchForce: 1000
+  _maxDragDistance: 3
 --- !u!1 &1301255682
 GameObject:
   m_ObjectHideFlags: 0
