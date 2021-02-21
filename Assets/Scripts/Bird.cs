@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    [SerializeField] private float _launchForce = 1000;
-    [SerializeField] private float _maxDragDistance = 3;
+    [SerializeField] private float launchForce = 1000;
+    [SerializeField] private float maxDragDistance = 3;
 
     private Vector2 _startPosition;
     private Rigidbody2D _rigidbody2D;
@@ -34,7 +34,7 @@ public class Bird : MonoBehaviour
         direction.Normalize();
 
         _rigidbody2D.isKinematic = false;
-        _rigidbody2D.AddForce(direction * _launchForce);
+        _rigidbody2D.AddForce(direction * launchForce);
 
         _spriteRenderer.color = Color.white;
     }
@@ -45,11 +45,11 @@ public class Bird : MonoBehaviour
 
         Vector2 desiredPosition = mousePosition;
         float distance = Vector2.Distance(desiredPosition, _startPosition);
-        if (distance > _maxDragDistance)
+        if (distance > maxDragDistance)
         {
             Vector2 direction = desiredPosition - _startPosition;
             direction.Normalize();
-            desiredPosition = _startPosition + (direction * _maxDragDistance);
+            desiredPosition = _startPosition + (direction * maxDragDistance);
         }
         
         if (desiredPosition.x > _startPosition.x) 
